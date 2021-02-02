@@ -1,0 +1,21 @@
+Id:             'stata-aap'
+Description:    'stata-aap'
+Version:        '16.0.0'
+
+Install:
+    File:       '%INSTALL_DIR%\SetupStata16.exe'
+    FileType:   'exe'
+    Arguments:  '/s /v"/qn ADDLOCAL=core,StataIC64"'
+    ExitCodes:  [0]
+
+
+Applications:
+    stata:
+        DisplayName:    'Stata16'
+        Path:           '%PROGRAMFILES%\Stata16\StataIC-64.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
+
+Files: 
+    '%INSTALL_DIR%\STATA.LIC': '%PROGRAMFILES%\Stata16\STATA.LIC'
+    '%INSTALL_DIR%\profile.do': '%PROGRAMFILES%\Stata16\ado\base\profile.do'

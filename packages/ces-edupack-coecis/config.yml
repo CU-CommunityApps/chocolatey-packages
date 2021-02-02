@@ -1,16 +1,98 @@
 Id:             'ces-edupack-coecis'
-Description:    'CES Edupack 2020 - COECIS License - buildtest 1'
+Description:    'CES Edupack 2020 - COECIS License - buildtest 3'
 Version:        '20.1.0.0'
 
 Install:
-  - File:       '%INSTALL_DIR%\edupack_setup.2020.exe'
-    FileType:   'exe'
+  - File:       '%INSTALL_DIR%\packages\EduPack.msi'
+    FileType:   'msi'
+    Arguments:  'PARENTINSTALLFOLDER="%PROGRAMFILES(x86)%\GRANTA EduPack" /quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\License.msi'
+    FileType:   'msi'
+    Arguments:  'PARENTINSTALLFOLDER="%PROGRAMFILES(x86)%\GRANTA EduPack" SERVER=%SERVER% ANSYSLI_SERVERS=%ANSYSLI_SERVERS% /quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\design.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+    
+  - File:       '%INSTALL_DIR%\packages\l1arch.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+    
+  - File:       '%INSTALL_DIR%\packages\l1elem.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+    
+  - File:       '%INSTALL_DIR%\packages\l1en.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l2bio.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l2en.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l2med.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l2mse.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l2sus.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l3aero.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l3bio.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+    
+  - File:       '%INSTALL_DIR%\packages\l3eco.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]    
+
+  - File:       '%INSTALL_DIR%\packages\l3poly.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l3std.msi'
+    FileType:   'msi'
+    Arguments:  '/quiet'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\packages\l3sus.msi'
+    FileType:   'msi'
     Arguments:  '/quiet'
     ExitCodes:  [0]
 
 Applications:
     CES:
         DisplayName:    'CES EduPack 2020'
-        Path:           '%PROGRAMFILES(X86)%\CES EduPack 2020\CES.exe'
+        Path:           '%PROGRAMFILES(X86)%\GRANTA EduPack\2020\Edupack.exe'
         LaunchParams:   ''
         WorkDir:        ''
+Files:                                                                  ## File copy feature
+    '%INSTALL_DIR%\ansyslmd.ini': '%PROGRAMFILES(X86)%\GRANTA EduPack\Shared Files\Licensing\ansyslmd.ini'

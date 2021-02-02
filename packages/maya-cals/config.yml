@@ -1,0 +1,41 @@
+Id:             'maya-cals'
+Description:    'maya-cals'
+Version:        '2020.2.0.881'
+
+Install:
+    File:       '%INSTALL_DIR%\Setup.exe'
+    FileType:   'exe'
+    Arguments:  '--silent'
+    ExitCodes:  [0,1638,1641] # 1638 = newer version of a prereq already installed (C++)
+
+Applications:
+    maya:
+        DisplayName:    'Maya'
+        Path:           '%PROGRAMFILES%\Autodesk\Maya2020\bin\maya.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
+        
+Files:
+    '%INSTALL_DIR%\userPrefs.mel': '%SYSTEMDRIVE%\Users\Default\Documents\maya\2020\prefs\userPrefs.mel'
+
+Environment:
+    ADSKFLEX_LICENSE_FILE: '%MAYA_LICENSE_FILE%'
+    MAYA_NO_WARNING_FOR_MISSING_DEFAULT_RENDERER: '1'
+    
+Services:
+    AdAppMgrSvc: 'Manual' # Autodesk Desktop App Service
+
+Registry:
+    HKUD:
+        SOFTWARE\Autodesk\MC3:
+            ADAOptIn:
+                Type:   'DWORD'
+                Value:  '0'
+                
+            ADARePrompted:
+                Type:   'DWORD'
+                Value:  '1'
+
+Scripts:
+    start:
+        System: '%TOOLS_DIR%\startup.ps1' # Runs at system startup

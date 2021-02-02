@@ -1,5 +1,5 @@
 Id:             'sas-ciser'
-Description:    'sas-ciser - fall2020a1'
+Description:    'sas-ciser'
 Version:        '9.4'
 
 Install:
@@ -18,4 +18,4 @@ Applications:
 Files:
     '%TOOLS_DIR%\profile.sas7bcat': '%SYSTEMDRIVE%\Users\Default\Documents\My SAS Files\9.4\profile.sas7bcat'
     '%TOOLS_DIR%\profile2.sas7bcat': '%SYSTEMDRIVE%\Users\Default\Documents\My SAS Files\9.4\profile2.sas7bcat'
-    '%TOOLS_DIR%\registry.sas7bitm': '%SYSTEMDRIVE%\Users\Default\Documents\My SAS Files\9.4\regstry.sas7bitm'
+    '%TOOLS_DIR%\regstry.sas7bitm': '%SYSTEMDRIVE%\Users\Default\Documents\My SAS Files\9.4\regstry.sas7bitm'

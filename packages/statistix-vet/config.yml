@@ -1,0 +1,16 @@
+Id:             'statistix-vet'                ## Application package name ie. chrome-cornell
+Description:    'statistix-vet'    ## Application packages description
+Version:        '10.0.2.61'                     ## Application version number - MUST BE in #.# format
+
+Install:                                    ## If there are installation files in a .zip to be installed, specify here
+  - File:       '%INSTALL_DIR%\SetupStatistix10Network.exe'   ## Installation file
+    FileType:   'exe'                       ## exe or msi are the only options currently
+    Arguments:  '-s'        ## Silent installation switches/parmeters
+    ExitCodes:  [0]                         ## Exit codes - returns a success
+    
+Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
+    statistix:                                                      ## This must match the icons.png file name
+        DisplayName:    'Statistix 10'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES(x86)%\Statistix 10\Sxw.exe'          ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory

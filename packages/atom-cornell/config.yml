@@ -1,6 +1,6 @@
 Id:             'atom-cornell'
-Description:    'Atom - buildtest'
-Version:        '1.48.0'
+Description:    'Atom - buildtest2'
+Version:        '1.50.0'
 
 Applications:
     atom:
@@ -12,7 +12,7 @@ Applications:
 Files:
     '%TOOLS_DIR%\config.cson': '%SYSTEMDRIVE%\Users\Default\.atom\config.cson'
     '%INSTALL_DIR%\atom.exe':      '%PROGRAMFILES%\Atom\atom.exe'
-    '%INSTALL_DIR%\app-1.48.0':       '%PROGRAMFILES%\Atom\app-1.48.0'
+    '%INSTALL_DIR%\app-1.50.0':       '%PROGRAMFILES%\Atom\app-1.50.0'
     '%INSTALL_DIR%\bin':      '%PROGRAMFILES%\Atom\bin'
     '%INSTALL_DIR%\packages':       '%PROGRAMFILES%\Atom\packages'
 

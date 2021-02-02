@@ -1,6 +1,6 @@
 Id:             'acrobat-named-cornell'
 Description:    'Adobe Acrobat DC'
-Version:        '20.0'
+Version:        '20.12.20043.3217'
 
 Install:
     File:       '%INSTALL_DIR%\Build\setup.exe'

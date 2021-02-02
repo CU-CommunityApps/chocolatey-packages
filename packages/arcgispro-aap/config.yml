@@ -1,0 +1,63 @@
+Id:             'arcgispro-aap'
+Description:    'arcgispro-aap'
+Version:        '2.5.22081'
+
+Install:
+  - File:       '%INSTALL_DIR%\ArcGISd1\ArcGISPro.msi'
+    FileType:   'msi'
+    Arguments:  'ALLUSERS=1 ENABLEEUEI=0 CHECKFORUPDATESATSTARTUP=0 ESRI_LICENSE_HOST=%LICENSE_SERVER% SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE /qn /norestart'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\ArcGISd2\ArcGISProHelp.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\ArcGISd3\DataInteropPro.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\ArcGISd4\ProCoordinateSystemsData.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\ArcGISd5\RasterData.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [0]
+    
+Applications:
+    arcgispro:
+        DisplayName:    'ArcGIS Pro'
+        Path:           '%PROGRAMFILES%\ArcGIS\Pro\bin\ArcGISPro.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
+        
+    ##arcgisproauth:
+        #DisplayName:    'ArcGIS Pro Duo Auth'
+        #Path:           '%PROGRAMFILESX86%\Internet Explorer\iexplore.exe'
+        #LaunchParams:   'https://ccegeomaps.maps.arcgis.com/sharing/rest/oauth2/authorize?client_id=arcgisonline&display=default&response_type=token&state=%7B%22useLandingPage%22%3Atrue%7D&expiration=20160&locale=en-us&redirect_uri=https%3A%2F%2Fccegeomaps.maps.arcgis.com%2Fhome%2Faccountswitcher-callback.html&force_login=true&showSignupOption=true'
+        #WorkDir:        ''
+
+Registry:
+    HKUD:
+        Software\ESRI\ArcGIS Online For Pro\Portals:
+            URL0:
+                Type:   'String'
+                Value:  'https://ccegeomaps.maps.arcgis.com'
+                
+        Software\ESRI\ArcGIS Online For Pro\SignIn:
+            HomeServerURIFile:
+                Type:   'String'
+                Value:  'https://ccegeomaps.maps.arcgis.com'
+                
+        Software\ESRI\ArcGIS Online For Pro\SignIn\ccegeomaps.maps.arcgis.com:
+            Authentication:
+                Type:   'DWORD'
+                Value:  '0'
+                
+            IsPortal:
+                Type:   'DWORD'
+                Value:  '1'                

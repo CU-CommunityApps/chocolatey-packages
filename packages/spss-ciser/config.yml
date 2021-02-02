@@ -1,9 +1,9 @@
 Id:             'spss-ciser'
-Description:    'SPSS Statistics'
-Version:        '25.0'
+Description:    'SPSS Statistics - buildtest1'
+Version:        '26.0'
 
 Install:
-    File:       '%INSTALL_DIR%\IBM_SPSS_Statistics_25.msi'
+    File:       '%INSTALL_DIR%\IBM_SPSS_Statistics_26.msi'
     FileType:   'msi'
     Arguments:  '/qn'
     ExitCodes:  [0]
@@ -11,10 +11,13 @@ Install:
 Applications:
     spss:
         DisplayName:    'spss'
-        Path:           '%PROGRAMFILES%\IBM\SPSS\Statistics\25\stats.exe'
+        Path:           '%PROGRAMFILES%\IBM\SPSS\Statistics\26\stats.exe'
         LaunchParams:   ''
         WorkDir:        ''
-        
+
+Files: 
+    '%INSTALL_DIR%\PROCESS_v3.5': '%ALLUSERSPROFILE%\IBM\SPSS\Statistics\26\CustomDialogs\PROCESS_v3.5'
+
 Registry:
     HKUD:
         SOFTWARE\ibm\spss\license:

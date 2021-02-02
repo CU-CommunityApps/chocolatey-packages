@@ -1,6 +1,6 @@
 Id:             'aftereffects-named-cornell'
 Description:    'Adobe After Effects CC 2020'
-Version:        '17.1.1.34'
+Version:        '17.6.0'
 
 Install:
     File:       '%INSTALL_DIR%\Build\setup.exe'
@@ -14,7 +14,10 @@ Applications:
         Path:           '%PROGRAMFILES%\Adobe\Adobe After Effects 2020\Support Files\AfterFX.exe'
         LaunchParams:   ''
         WorkDir:        ''
-        
+
+Files:                                                                  ## File copy feature
+    '%INSTALL_DIR%\SCRPriorState.json': '%SYSTEMDRIVE%\Users\Default\AppData\Roaming\Adobe\After Effects\17.6\SCRPriorState.json'  ## Source directory to destination directory
+
 Registry:
     HKUD:
         Software\Microsoft\Windows\CurrentVersion\Internet Settings:

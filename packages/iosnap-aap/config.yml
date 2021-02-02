@@ -1,0 +1,19 @@
+Id:             'iosnap-aap'                ## Application package name ie. chrome-cornell
+Description:    'IO-Snap'    ## Application packages description
+Version:        '1.0.2.9'                     ## Application version number - MUST BE in #.# format
+
+Install:                                    ## If there are installation files in a .zip to be installed, specify here
+  - File:       '%INSTALL_DIR%\IO-Snap.msi'   ## Installation file
+    FileType:   'msi'                       ## exe or msi are the only options currently
+    Arguments:  '/qn'        ## Silent installation switches/parmeters
+    ExitCodes:  [0]                         ## Exit codes - returns a success
+   
+Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
+    iosnap:                                                      ## This must match the icons.png file name
+        DisplayName:    'IO-Snap'                ## How the app displayed to the user
+        Path:           '%SYSTEMDRIVE%\IO-Snap\IO-Snap\IOSNAP.exe'          ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+Files:                                                                  ## File copy feature
+    '%INSTALL_DIR%\License.dat': '%SYSTEMDRIVE%\IO-Snap\IO-Snap\License.dat'

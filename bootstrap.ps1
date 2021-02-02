@@ -75,7 +75,6 @@ if (-Not (Test-Path $BUILD_DIR)) {
     
     # Uninstall Corrupt Windows Feature from AWS AMI
     If($OSVERSION -match "2016"){Uninstall-WindowsFeature -Name Windows-Defender}
-    Else{New-Item $REBOOT_LOCK -Force}
 
     # Parse EC2 Metadata
     $user_data_uri = "http://169.254.169.254/latest/user-data"

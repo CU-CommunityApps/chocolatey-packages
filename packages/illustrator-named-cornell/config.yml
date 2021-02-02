@@ -1,6 +1,6 @@
 Id:             'illustrator-named-cornell'
-Description:    'Adobe Illustrator 2020'
-Version:        '24.2.1'
+Description:    'Adobe Illustrator 2021'
+Version:        '25.1.0'
 
 Install:
     File:       '%INSTALL_DIR%\Build\setup.exe'
@@ -10,8 +10,8 @@ Install:
 
 Applications:
     illustrator: 
-        DisplayName:    'Adobe Illustrator 2020'
-        Path:           '%PROGRAMFILES%\Adobe\Adobe Illustrator 2020\Support Files\Contents\Windows\illustrator.exe'
+        DisplayName:    'Adobe Illustrator 2021'
+        Path:           '%PROGRAMFILES%\Adobe\Adobe Illustrator 2021\Support Files\Contents\Windows\illustrator.exe'
         LaunchParams:   ''
         WorkDir:        ''
         

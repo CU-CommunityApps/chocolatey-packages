@@ -1,12 +1,12 @@
 Id:             'inventor-coecis'
-Description:    'Autodesk Inventor 2021 - COECIS LICENSE build1'
+Description:    'Autodesk Inventor 2021 - COECIS LICENSE'
 Version:        '2021.0'
 
 Install:
     File:       '%INSTALL_DIR%\Img\setup.exe'
     FileType:   'exe'
     Arguments:  '/qb /W /I %INSTALL_DIR%\Img\inventor2021.ini /language en-us /c FREEDOM:REBOOT=ReallySuppress'
-    ExitCodes:  [0,1641]
+    ExitCodes:  [0,1638,1641]
 
 Applications:
     Inventor:

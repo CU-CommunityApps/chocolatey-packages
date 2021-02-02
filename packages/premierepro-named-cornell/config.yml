@@ -1,6 +1,6 @@
 Id:             'premierepro-named-cornell'
 Description:    'Adobe Premiere Pro CC 2020'
-Version:        '14.3'
+Version:        '14.8.0'
 
 Install:
     File:       '%INSTALL_DIR%\Build\setup.exe'
@@ -15,6 +15,9 @@ Applications:
         LaunchParams:   ''
         WorkDir:        ''
 
+Files:
+    '%INSTALL_DIR%\SCRPriorState.json': '%SYSTEMDRIVE%\Users\Default\AppData\Roaming\Adobe\Premiere Pro\14.0\SCRPriorState.json'
+    
 Registry:
     HKUD:
         Software\Microsoft\Windows\CurrentVersion\Internet Settings:

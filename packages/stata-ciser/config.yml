@@ -1,21 +1,21 @@
 Id:             'stata-ciser'
-Description:    'stata-ciser -buildtest1'
-Version:        '15.0.0'
+Description:    'stata-ciser a2'
+Version:        '16.0.0'
 
 Install:
-    File:       '%INSTALL_DIR%\SetupStata15.exe'
-    FileType:   'exe'
-    Arguments:  '/passive ADDLOCAL=Ado,Core,StataIC64'
+    File:       '%INSTALL_DIR%\Stata16.msi'
+    FileType:   'msi'
+    Arguments:  '/passive ADDLOCAL=core,StataMP64'
     ExitCodes:  [0]
 
 
 Applications:
     stata:
-        DisplayName:    'Stata15'
-        Path:           '%PROGRAMFILES(x86)%\Stata15\Stata-64.exe'
+        DisplayName:    'Stata16'
+        Path:           '%PROGRAMFILES%\Stata16\StataMP-64.exe'
         LaunchParams:   ''
         WorkDir:        ''
 
 Files: 
-    '%INSTALL_DIR%\STATA.LIC': '%PROGRAMFILES(x86)%\Stata15\STATA.LIC'
-    '%INSTALL_DIR%\profile.do': '%PROGRAMFILES(x86)%\Stata15\ado\base\profile.do'
+    '%INSTALL_DIR%\STATA.LIC': '%PROGRAMFILES%\Stata16\STATA.LIC'
+    '%INSTALL_DIR%\profile.do': '%PROGRAMFILES%\Stata16\ado\base\profile.do'

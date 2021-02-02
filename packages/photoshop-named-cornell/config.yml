@@ -1,6 +1,6 @@
 Id:             'photoshop-named-cornell'
-Description:    'Adobe Photoshop CC 2020'
-Version:        '21.2.0.225'
+Description:    'Adobe Photoshop CC 2021'
+Version:        '22.1.1'
 
 Install:
     File:       '%INSTALL_DIR%\Build\setup.exe'
@@ -10,8 +10,8 @@ Install:
 
 Applications:
     photoshop: 
-        DisplayName:    'Adobe Photoshop 2020'
-        Path:           '%PROGRAMFILES%\Adobe\Adobe Photoshop 2020\photoshop.exe'
+        DisplayName:    'Adobe Photoshop 2021'
+        Path:           '%PROGRAMFILES%\Adobe\Adobe Photoshop 2021\photoshop.exe'
         LaunchParams:   ''
         WorkDir:        ''
         

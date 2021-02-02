@@ -1,0 +1,45 @@
+Id:             'revit-cornell'
+Description:    'Revit 2021 - Cornell Lab Lic'
+Version:        '21.0.0.383'
+
+Install:
+    File:       '%INSTALL_DIR%\Img\setup.exe'
+    FileType:   'exe'
+    Arguments:  '/q /W /I %INSTALL_DIR%\Img\revit-cornell.ini /language en-us /c FREEDOM:REBOOT=ReallySuppress'
+    ExitCodes:  ''
+
+Applications:
+    revit:
+        DisplayName:    'Revit 2021'
+        Path:           '%PROGRAMFILES%\Autodesk\Revit 2021\acad.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
+
+Environment:
+    ADSKFLEX_LICENSE_FILE: '%AUTOCAD_LICENSE_FILE%'
+
+Registry:
+
+    HKUD:
+        SOFTWARE\Autodesk\MC3:
+            ADAOptIn:
+                Type:   'DWORD'
+                Value:  '0'
+                
+            ADARePrompted:
+                Type:   'DWORD'
+                Value:  '1'
+
+            OverridedByHKLM:
+                Type:   'DWORD'
+                Value:  '0'
+                
+    HKLM:
+        Software\Autodesk\MC3:
+            HKLMADAOptin:
+                Type:   'DWORD'
+                Value:  '0'
+
+            HKLMADARePrompted:
+                Type:   'DWORD'
+                Value:  '1'

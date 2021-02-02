@@ -1,6 +1,6 @@
 Id:             'googledrivefilestream-cornell'                ## Application package name ie. chrome-cornell
-Description:    'Google Drive File Stream - buildtest1'    ## Application packages description
-Version:        '40.0.8.0'                     ## Application version number - MUST BE in #.# format
+Description:    'Google Drive File Stream'    ## Application packages description
+Version:        '44.0.14.0'                     ## Application version number - MUST BE in #.# format
 
 Install:                                    ## If there are installation files in a .zip to be installed, specify here
   - File:       '%INSTALL_DIR%\GoogleDriveFSSetup.exe'   ## Multiple installation files require '-' to specify an array of apps are to be installed
@@ -11,6 +11,6 @@ Install:                                    ## If there are installation files i
 Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
     googledrivefilestream:                                                      ## This must match the icons.png file name
         DisplayName:    'Google Drive File Stream'                ## How the app displayed to the user
-        Path:           '%PROGRAMFILES%\Google\Drive File Stream\40.0.8.0\GoogleDriveFS.exe'          ## The path to the app
+        Path:           '%PROGRAMFILES%\Google\Drive File Stream\44.0.14.0\GoogleDriveFS.exe'          ## The path to the app
         LaunchParams:   ''                     ## Launch parameters for the app
         WorkDir:        '' ## Working directory

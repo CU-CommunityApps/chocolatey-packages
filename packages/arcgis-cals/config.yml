@@ -1,42 +1,42 @@
 Id:             'arcgis-cals'
-Description:    'arcgis-cals - fa2020'
+Description:    'arcgis-cals - fa202a2'
 Version:        '10.8'
 
 Install:
   - File:       '%INSTALL_DIR%\arcgisd1\VC_redist.x86.exe'
     FileType:   'exe'
     Arguments:  '/install /quiet /norestart'
-    ExitCodes:  [3010,0]
+    ExitCodes:  [1641,1638,3010,0]
 
   - File:       '%INSTALL_DIR%\arcgisd1\setup.msi'
     FileType:   'msi'
-    Arguments:  'ESRI_LICENSE_HOST=%LICENSE_SERVER% SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE ENABLEEUEI=0 CHECKFORUPDATESATSTARTUP=0 /qn'
-    ExitCodes:  [0]
+    Arguments:  'ESRI_LICENSE_HOST=%LICENSE_SERVER% SOFTWARE_CLASS=Professional AUTHORIZATION_TYPE=CONCURRENT_USE ENABLEEUEI=0 CHECKFORUPDATESATSTARTUP=0 /qn /norestart'
+    ExitCodes:  [1641,1638,3010,0]
     
   - File:       '%INSTALL_DIR%\arcgisd2\setup.msi'
     FileType:   'msi'
-    Arguments:  '/qn'
-    ExitCodes:  [0]
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [1641,1638,3010,0]
  
   - File:       '%INSTALL_DIR%\arcgisd3\CSD.msi'
     FileType:   'msi'
-    Arguments:  '/qn'
-    ExitCodes:  [0]
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [1641,1638,3010,0]
 
   - File:       '%INSTALL_DIR%\arcgisd4\Support\VCREDIST\VC_redist.x64.exe'
     FileType:   'exe'
     Arguments:  '/install /quiet /norestart'
-    ExitCodes:  [3010,0]
+    ExitCodes:  [1641,1638,3010,0]
     
   - File:       '%INSTALL_DIR%\arcgisd4\setup.msi'
     FileType:   'msi'
-    Arguments:  '/qn'
-    ExitCodes:  [0]
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [1641,1638,3010,0]
 
   - File:       '%INSTALL_DIR%\arcgisd6\setup.msi'
     FileType:   'msi'
-    Arguments:  '/qn'
-    ExitCodes:  [0]
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [1641,1638,3010,0]
     
 Applications:
     arcmap:

@@ -1,6 +1,6 @@
 Id:             'arcgispro-cals'
-Description:    'arcgispro-cals'
-Version:        '2.5'
+Description:    'arcgispro-cals - sp2021'
+Version:        '2.5.22081'
 
 Install:
   - File:       '%INSTALL_DIR%\ArcGISd1\ArcGISPro.msi'

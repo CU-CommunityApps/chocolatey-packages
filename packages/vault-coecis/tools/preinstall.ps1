@@ -1,7 +1,4 @@
 # Runs before the choco package is installed
-# Install .NET
-Add-WindowsFeature NET-Framework-Core
-
 $INSTALL_DIR =  Join-Path $PSScriptRoot 'installer'
 
 # Install prereq's

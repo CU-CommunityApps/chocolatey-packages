@@ -1,0 +1,41 @@
+Id:             'rhino6-aap'
+Description:    'rhino6-aap - buildtest1'
+Version:        '6.33.20343.16431'
+
+Install:
+  - File:       '%INSTALL_DIR%\Bootstrapper.exe'
+    FileType:   'exe'
+    Arguments:  '-package -quiet LICENSE_METHOD=ZOO ZOO_SERVER=%ZOO_SERVER% ENABLE_AUTOMATIC_UPDATES=0 SEND_STATISTICS=0'
+    ExitCodes:  [0]
+
+  - File:       '%INSTALL_DIR%\vray_50002_rhino_win_x64.exe'
+    FileType:   'exe'
+    Arguments:  '-gui=0 -configFile=%INSTALL_DIR%\config.xml -quiet=1'
+    ExitCodes:  [0]
+    
+Applications:
+    rhino6:
+        DisplayName:    'Rhino'
+        Path:           '%PROGRAMFILES%\Rhino 6\System\Rhino.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
+
+Services: 
+    McNeelUpdate: 'Disabled'
+
+Registry:               ## Registry values to be copied to each streaming instance
+   HKUD:               ## Use for typical Current User settings to apply to all users in AppStream
+        SOFTWARE\McNeel\Rhinoceros\6.0\Global Options\Privacy:
+            RhinoSplash.UsageStatsEnabledDialog Shown:
+                Type:   'String'
+                Value:  'no'
+                
+   HKLM:
+        SOFTWARE\McNeel\Rhinoceros\6.0\Install:
+            enable_automatic_updates:
+                Type:   'String'
+                Value:  '0'
+                
+            send_statistics:
+                Type:   'String'
+                Value:  '0'

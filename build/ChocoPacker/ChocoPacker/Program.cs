@@ -241,7 +241,8 @@ namespace ChocoPacker
                     this.AlertFailure(branch, package, e.ToString());
                     package_fail = true;
                 }
-
+                
+                Console.WriteLine("Free space of C: " + PercentageFreeSpace("C"));
                 Console.WriteLine($"Extracting {local_zip} to {installer_dir}...");
 
                 try {
@@ -359,6 +360,22 @@ namespace ChocoPacker
             // Print the MessageId of the published message.
             Console.WriteLine($"Sending failed build SNS for {package}; MessageId: " + publishResponse.MessageId);
             package_fail = true;
+        }
+        
+        private double PercentageFreeSpace(string driveLetter)
+        {
+            try
+            {
+                DriveInfo drive = new DriveInfo(driveLetter);
+                return drive.AvailableFreeSpace;
+            }
+            catch
+            {
+                // Return -1 when the drive is not accessible (gives an `IOException`)
+                // or when the drive letter is invalid, in which case `DriveInfo()` generates
+                // an error of type `ArgumentException`.
+                return -1;
+            }
         }
 
         void App()

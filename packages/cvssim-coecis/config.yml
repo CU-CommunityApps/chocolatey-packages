@@ -1,0 +1,19 @@
+Id:             'cvssim-coecis'                ## Application package name ie. chrome-cornell
+Description:    'cvssim-coecis - buildtest2'    ## Application packages description
+Version:        '18.0'                     ## Application version number - MUST BE in #.# format
+
+Install:                                    ## If there are installation files in a .zip to be installed, specify here
+  - File:       '%INSTALL_DIR%\Installer\Volume\setup.exe'   ## Installation file
+    FileType:   'exe'                       ## exe or msi are the only options currently
+    Arguments:  '/q /acceptlicenses yes /r:n'        ## Silent installation switches/parmeters
+    ExitCodes:  [0]                         ## Exit codes - returns a success                   
+
+Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
+    cvs:                                                      ## This must match the icons.png file name
+        DisplayName:    'CVS'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES(x86)%\CVS Installer\CVS.exe'          ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+Files: 
+  '%INSTALL_DIR%\Installer\data.xls': '%SYSTEMDRIVE%\CVS_V2_Installer\data.xls'

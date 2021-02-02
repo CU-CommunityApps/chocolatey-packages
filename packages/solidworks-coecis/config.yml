@@ -1,11 +1,26 @@
 Id:             'solidworks-coecis'
 Description:    'SOLIDWORKS 2020 - COECIS License'
-Version:        '28.3.0.0086'
+Version:        '28.130.0086'
 
 Install:
-    File:       '%INSTALL_DIR%\startswinstall.exe'
-    FileType:   'exe'
-    Arguments:  '/install /now'
+  - File:       '%INSTALL_DIR%\SOLIDWORKS\solidworks.msi'
+    FileType:   'msi'
+    Arguments:  'ENABLEPERFORMANCE=0 INSTALLDIR="%PROGRAMFILES%\SOLIDWORKS Corp\SOLIDWORKS" OFFICEOPTION=2 SERVERLIST=%LICENSE_SERVER% SOLIDWORKSSERIALNUMBER=%LICENSE_KEY% TOOLBOXFOLDER="C:\SOLIDWORKS Data" ADDLOCAL=SolidWorks,SolidWorksToolbox /qn /norestart'
+    ExitCodes:  [0]
+    
+  - File:       '%INSTALL_DIR%\SOLIDWORKS Composer\SolidWorks Composer.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart'
+    ExitCodes:  [0]
+    
+  - File:       '%INSTALL_DIR%\SOLIDWORKS Visualize\solidworks visualize.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart SERVERLIST=%LICENSE_SERVER%'
+    ExitCodes:  [0]
+  
+  - File:       '%INSTALL_DIR%\eDrawings\eDrawings.msi'
+    FileType:   'msi'
+    Arguments:  '/qn /norestart ADDLOCAL=All LOGPERFORMANCE=0 SNLSERVER=%LICENSE_SERVER% INSTALLDIR="%PROGRAMFILES%\SOLIDWORKS Corp\eDrawings"'
     ExitCodes:  [0]
 
 Applications:
@@ -17,7 +32,7 @@ Applications:
 
     composerplayer:
         DisplayName:    'SOLIDWORKS Composer Player'
-        Path:           '%PROGRAMFILES%\SOLIDWORKS Corp\SOLIDWORKS Composer Player\Bin\composerplayer.exe'
+        Path:           '%PROGRAMFILES%\SOLIDWORKS Corp\Composer\bin\composerplayer.exe'
         LaunchParams:   ''
         WorkDir:        ''
 
@@ -32,15 +47,21 @@ Applications:
         Path:           '%PROGRAMFILES%\SOLIDWORKS Corp\eDrawings\eDrawings.exe'
         LaunchParams:   ''
         WorkDir:        ''
+        
+    toolbox:
+        DisplayName:    'Toolbox Settings 2020'
+        Path:           '%PROGRAMFILES%\SOLIDWORKS Corp\SOLIDWORKS\SldToolboxConfigure.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
 
 Files: 
     '%TOOLS_DIR%\solidworks-accept-eula.ps1': '%ALLUSERSPROFILE%\solidworks-accept-eula.ps1'
     '%TOOLS_DIR%\SolidWorks\*': '%SYSTEMDRIVE%\Users\Default\AppData\Local'
 
 Services:
-    RemoteSolverDispatcher:         'Manual' # Remote Solver for Flow Simulation
-    SWVisualize2019.Queue.Server:   'Manual'
+#     RemoteSolverDispatcher:         'Manual' # Remote Solver for Flow Simulation
+    SWVisualize2020.Queue.Server:   'Manual'
 
-ScheduledTasks:
-    - 'solidworks-accept-eula'
-    
+Scripts:
+    start:
+        User: '%TOOLS_DIR%\solidworks-accept-eula.ps1' # Runs at user login

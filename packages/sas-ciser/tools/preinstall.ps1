@@ -107,28 +107,30 @@ cp "$INSTALL_DIR\sid_files\SAS94_9CCLNB_70084773_Win_X64_Srv.txt" "$env:windir\t
 ::
 #>
 $DEPOT_HOME="$INSTALL_DIR\products"
-<#::
+<#
+::
 :: --------------------------------------------------------------------------------
 :: Microsoft Office Access Database Engine 2010 (REQUIRED)
-#>
+
 Start-Process "msiexec" -ArgumentList "/i $DEPOT_HOME\ace__99140__prt__xx__sp0__1\w32\native\AceRedist.msi /qn /norestart" -Wait
 Start-Process "msiexec" -ArgumentList "/i $DEPOT_HOME\ace__99140__prt__xx__sp0__1\wx6\native\AceRedist_x64.msi /qn /norestart" -Wait
-<#
+
 :: --------------------------------------------------------------------------------
 :: Microsoft Runtime Components 2013 (REQUIRED)
 #>
-Start-Process "$DEPOT_HOME\vcredist2013__99130__prt__xx__sp0__1\w32\native\vcredist_x86.exe" -ArgumentList "/q /norestart" -Wait
-Start-Process "$DEPOT_HOME\vcredist2013__99130__prt__xx__sp0__1\wx6\native\vcredist_x64.exe" -ArgumentList "/q /norestart" -Wait
+Start-Process "$DEPOT_HOME\vcredist2013__99150__prt__xx__sp0__1\w32\native\vcredist_x86.exe" -ArgumentList "/q /norestart" -Wait
+Start-Process "$DEPOT_HOME\vcredist2013__99150__prt__xx__sp0__1\wx6\native\vcredist_x64.exe" -ArgumentList "/q /norestart" -Wait
 <#
 :: --------------------------------------------------------------------------------
 :: Microsoft Runtime Components 2015 (REQUIRED)
 #>
-Start-Process "$DEPOT_HOME\vcredist2015__99110__prt__xx__sp0__1\w32\native\vc_redist.x86.exe" -ArgumentList "/q /norestart" -Wait
-Start-Process "$DEPOT_HOME\vcredist2015__99110__prt__xx__sp0__1\wx6\native\vc_redist.x64.exe" -ArgumentList "/q /norestart" -Wait
+Start-Process "$DEPOT_HOME\vcredist2015__99130__prt__xx__sp0__1\w32\native\vc_redist.x86.exe" -ArgumentList "/q /norestart" -Wait
+Start-Process "$DEPOT_HOME\vcredist2015__99130__prt__xx__sp0__1\wx6\native\vc_redist.x64.exe" -ArgumentList "/q /norestart" -Wait
 Remove-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager" -Name "PendingFileRenameOperations" -Force -ErrorAction SilentlyContinue
 Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\FileRenameOperations" -Recurse -Force -ErrorAction SilentlyContinue
 <#
 :: --------------------------------------------------------------------------------
 :: Microsoft.NET Framework 4.6 (REQUIRED)
-#>
+
 Start-Process "$DEPOT_HOME\dotnet46__99110__prt__xx__sp0__1\w32\native\NDP46-KB3045557-x86-x64-AllOS-ENU.exe" -ArgumentList "/q /lang:ENU /norestart" -Wait
+#>

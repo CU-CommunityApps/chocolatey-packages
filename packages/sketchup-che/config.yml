@@ -1,0 +1,20 @@
+Id:             'sketchup-che'                ## Application package name ie. chrome-cornell
+Description:    'sketchup-che'    ## Application packages description
+Version:        '20.2.172'                     ## Application version number - MUST BE in #.# format
+
+Install:                                    ## If there are installation files in a .zip to be installed, specify here
+  - File:       '%INSTALL_DIR%\SketchUpPro-2020-2.msi'   ## Installation file
+    FileType:   'msi'                       ## exe or msi are the only options currently
+    Arguments:  '/qb /norestart TRANSFORMS=%INSTALL_DIR%\SketchUp2020T.mst'        ## Silent installation switches/parmeters
+    ExitCodes:  [0]     ## Leave blank '' if no parameters to pass
+
+Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
+    sketchup:                                                      ## This must match the icons.png file name
+        DisplayName:    'SketchUp'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES%\SketchUp\SketchUp 20xx\SketchUp.exe'          ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+Files:                                                                  ## File copy feature
+    '%INSTALL_DIR%\SketchUp.lic': '%ALLUSERSPROFILE%\SketchUp\SketchUp 2020\SketchUp.lic'  ## Source directory to destination directory
+    '%INSTALL_DIR%\PrivatePreferences.json': '%SYSTEMDRIVE%\Users\Default\AppData\Local\SketchUp\SketchUp 2020\SketchUp\PrivatePreferences.json'

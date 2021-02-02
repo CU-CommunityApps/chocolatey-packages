@@ -1,0 +1,37 @@
+Id:             'optitex19-che'                ## Application package name ie. chrome-cornell
+Description:    'optitex19-che'    ## Application packages description
+Version:        '19.0.163.0'                     ## Application version number - MUST BE in #.# format
+
+Install:                                    ## If there are installation files in a .zip to be installed, specify here
+  - File:       '%INSTALL_DIR%\Optitex19(x64).msi'   ## Installation file
+    FileType:   'msi'                       ## exe or msi are the only options currently
+    Arguments:  '/qn'        ## Silent installation switches/parmeters
+    ExitCodes:  [0]                         ## Exit codes - returns a success
+
+Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
+    avatar:                                                      ## This must match the icons.png file name
+        DisplayName:    'Avatar Editor'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES%\EFI-Optitex\Optitex 19\App\AvatarEditor.exe'          ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+    mark:                                                      ## This must match the icons.png file name
+        DisplayName:    'Marker'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES%\EFI-Optitex\Optitex 19\App\Mark.exe'        ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+    runway:                                                      ## This must match the icons.png file name
+        DisplayName:    'Runway Viewer'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES%\EFI-Optitex\Optitex 19\App\RunwayViewer.exe'     ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+    pds:                                                      ## This must match the icons.png file name
+        DisplayName:    'PDS'                ## How the app displayed to the user
+        Path:           '%PROGRAMFILES%\EFI-Optitex\Optitex 19\App\PDS.exe'     ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+Files:                                                                  ## File copy feature
+    '%INSTALL_DIR%\hasplm.ini': '%PROGRAMFILES(x86)%\Common Files\Aladdin Shared\HASP\hasplm.ini'  ## Source directory to destination directory

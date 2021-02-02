@@ -1,20 +1,16 @@
 Id:             'minitab-ciser'
-Description:    'minitab-ciser - buildtest2'
-Version:        '19.2.0.0'
+Description:    'minitab-ciser - buildtest'
+Version:        '19.2020.1.0'
 
 Install:
-    File:       '%INSTALL_DIR%\minitab19.2.0.0setup.exe'
+    File:       '%INSTALL_DIR%\minitab19.2020.1.0setup.x64.exe'
     FileType:   'exe'
-    Arguments:  '/exenoui /exelang 1033 /qn ACCEPT_EULA=1'
+    Arguments:  '/exenoui /exenoupdates /qn ACCEPT_EULA=1 FILE_LOC="%ALLUSERSPROFILE%\Minitab\Minitab 19\minitab.lic" DISABLE_ANALYTICS=1 DISABLE_UPDATES=1'
     ExitCodes:  [0]
 
 Applications:
     minitab:
         DisplayName:    'Minitab 19'
-        Path:           '%PROGRAMFILES(x86)%\Minitab\Minitab 19\Mtb.exe'
+        Path:           '%PROGRAMFILES%\Minitab\Minitab 19\Mtb.exe'
         LaunchParams:   ''
         WorkDir:        ''
-
-Files:
-    '%INSTALL_DIR%\License.ini': '%SYSTEMDRIVE%\ProgramData\Minitab\License.ini'
-    '%INSTALL_DIR%\minitab.lic': '%PROGRAMFILES(x86)%\Minitab\Minitab 19\minitab.lic'

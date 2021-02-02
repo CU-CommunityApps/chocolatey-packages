@@ -1,6 +1,6 @@
 Id:             'arcgispro-lib'
 Description:    'arcgispro-lib'
-Version:        '2.5'
+Version:        '2.5.22081'
 
 Install:
   - File:       '%INSTALL_DIR%\ArcGISd1\ArcGISPro.msi'

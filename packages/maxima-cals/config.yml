@@ -1,0 +1,21 @@
+Id:             'maxima-cals'                ## Application package name ie. chrome-cornell
+Description:    'maxima-cals'    ## Application packages description
+Version:        '5.44.0'                     ## Application version number - MUST BE in #.# format
+
+ChocoPackages:                              ## Chocolatey packages installed straight from Chocolatey Gallery
+  - PackageName:    'maxima'     ## Package name - https://chocolatey.org/packages - ie. adobereader
+    InstallParams:  '-y'      ## Install args to pass to the native installer in the package. Defaults to unspecified.
+                                            ## Leave blank '' if no parameters to pass
+Applications:                                                       ## Applications to be published to the user / Added to Image Assistant
+    wxmaxima:                                                      ## This must match the icons.png file name
+        DisplayName:    'wxMaxima'                ## How the app displayed to the user
+        Path:           '%SYSTEMDRIVE%\maxima-5.44.0\bin\wxmaxima.exe'          ## The path to the app
+        LaunchParams:   ''                     ## Launch parameters for the app
+        WorkDir:        '' ## Working directory
+
+Registry:               ## Registry values to be copied to each streaming instance
+    HKUD:               ## Use for typical Current User settings to apply to all users in AppStream
+        SOFTWARE\wxMaxima:
+            Show Tips:
+                Type:   'DWORD'
+                Value:  '0'

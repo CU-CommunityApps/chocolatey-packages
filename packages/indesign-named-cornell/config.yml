@@ -1,6 +1,6 @@
 Id:             'indesign-named-cornell'
-Description:    'Adobe InDesign CC 2020'
-Version:        '15.1.1'
+Description:    'Adobe InDesign CC 2021'
+Version:        '16.0.1'
 
 Install:
     File:       '%INSTALL_DIR%\Build\setup.exe'
@@ -10,8 +10,8 @@ Install:
 
 Applications:
     indesign: 
-        DisplayName:    'Adobe InDesign 2020'
-        Path:           '%PROGRAMFILES%\Adobe\Adobe InDesign 2020\InDesign.exe'
+        DisplayName:    'Adobe InDesign 2021'
+        Path:           '%PROGRAMFILES%\Adobe\Adobe InDesign 2021\InDesign.exe'
         LaunchParams:   ''
         WorkDir:        ''
         

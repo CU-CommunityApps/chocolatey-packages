@@ -1,11 +1,11 @@
 Id:             'Kodu-coecis'                ## Application package name ie. chrome-cornell
-Description:    'Kodu Game Lab - buildtest1'    ## Application packages description
+Description:    'Kodu Game Lab'    ## Application packages description
 Version:        '1.5.53.0'                     ## Application version number - MUST BE in #.# format
 
 Install:                                    ## If there are installation files in a .zip to be installed, specify here
   - File:       '%INSTALL_DIR%\KoduSetup.msi'   ## Installation file
     FileType:   'msi'                       ## exe or msi are the only options currently
-    Arguments:  '/q'        ## Silent installation switches/parmeters
+    Arguments:  '/qn /norestart'        ## Silent installation switches/parmeters
     ExitCodes:  [0]                         ## Exit codes - returns a success
     
 Applications:                                                       ## Applications to be published to the user / Added to Image Assistant

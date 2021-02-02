@@ -1,0 +1,55 @@
+Id:             '3ds-cals'
+Description:    '3ds-cals'
+Version:        '23.0.0.915'
+
+Install:
+    File:       '%INSTALL_DIR%\Setup.exe'
+    FileType:   'exe'
+    Arguments:  '--silent'
+    ExitCodes:  [0,1638,1641] # 1638 = newer version of a prereq already installed (C++)
+
+Applications:
+    3ds:
+        DisplayName:    '3ds Max'
+        Path:           '%PROGRAMFILES%\Autodesk\3ds Max 2021\3dsmax.exe'
+        LaunchParams:   ''
+        WorkDir:        ''
+
+Files: 
+    '%INSTALL_DIR%\3dsMax': '%SYSTEMDRIVE%\Users\Default\AppData\Local\Autodesk\3dsMax'
+
+Environment:
+    ADSKFLEX_LICENSE_FILE: '%3DS_LICENSE_FILE%'
+    
+Services:
+    AdAppMgrSvc: 'Manual' # Autodesk Desktop App Service
+
+Registry:
+
+    HKUD:
+        SOFTWARE\Autodesk\MC3:
+            ADAOptIn:
+                Type:   'DWORD'
+                Value:  '0'
+                
+            ADARePrompted:
+                Type:   'DWORD'
+                Value:  '1'
+
+        SOFTWARE\Autodesk\3dsMax\23.0:
+            CurrentLanguage:
+                Type:   'string'
+                Value:  'ENU'
+                
+            MaxStartupCount:
+                Type:   'DWORD'
+                Value:  '1'
+                
+        SOFTWARE\Autodesk\3dsMax\23.0\MiniDump\23.0.0.915:
+            SessionStartCount:
+                Type:   'DWORD'
+                Value:  '1'
+                
+            SessionCleanCloseCount:
+                Type:   'DWORD'
+                Value:  '1'

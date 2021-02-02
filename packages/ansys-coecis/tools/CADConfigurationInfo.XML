@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ANSYS_Geometry_Configurations>
   <WBCADTools>
     <AutoCAD Installed="True" Reader="True" Configured="True" />
@@ -20,5 +20,5 @@
   <PDMTools>
     <Teamcenter Installed="True" Configured="False" />
   </PDMTools>
-  <SpaceClaim Configured="True" Target="SCDM" Location="C:\Program Files\ANSYS Inc\v201\scdm" />
+  <SpaceClaim Configured="True" Target="SCDM" Location="C:\Program Files\ANSYS Inc\v202\scdm" />
 </ANSYS_Geometry_Configurations>

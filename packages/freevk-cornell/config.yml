@@ -1,6 +1,6 @@
 Id:             'freevk-cornell'
 Description:    'freevk-cornell - buildtest'
-Version:        '4.1.0.0'
+Version:        '5.0.0.0'
 
 Install:
     File:       '%INSTALL_DIR%\FreeVKSetup.exe'
